@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Login | FOrganizer</title>
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+    <body>
+        <div th:if="${param.error1}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <form class="formbox" method="POST" th:action="@{/login}">
+    <h1>Login - AdminPanel</h1>
+    <input type="text" name="username" placeholder="Username">
+    <input name="password" type=password placeholder="Password">
+    <input type=submit name=submit value="Einloggen">
+</form>
+    </body>
+</html>

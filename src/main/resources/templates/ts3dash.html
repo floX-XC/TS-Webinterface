@@ -1,0 +1,104 @@
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>TeamBot | TS3</title>
+        <link rel="stylesheet" href="css/home.css">
+    </head>
+  <body>
+  	<header role="banner">
+  <h1>TeamBot - Panel</h1>
+  <ul class="utilities">
+    <br>
+    <li class="users"><a href="#">Mein Account</a></li>
+    <li class="logout warn"><a href="">Ausloggen</a></li>
+  </ul>
+</header>
+
+<nav role='navigation'>
+  <ul class="main">
+    <li class="dashboard"><a href="#">Dashboard</a></li>
+    <li class="edit"><a href="tsinstall.html">TS3 - Server</a></li>
+    <li class="write"><a href="ts3dash.html">TS3 - Bot</a></li>
+    <li class="comments"><a href="#">Clients (TS3)</a></li>
+    <li class="users"><a href="#">Bald</a></li>
+  </ul>
+</nav>
+
+<main role="main">
+  
+  <section class="panel important">
+    <h2>Dashboard</h2>
+    <ul>
+      <li>Test</li>
+    </ul>
+  </section>
+  
+  <section class="panel important">
+    <h2>TS3 - Bot erstellen</h2>
+      <form action="#" th:action="@{/ts3dash}" th:object="${bot}" method="post">
+        <div class="twothirds">
+          Bot Name:<br/>
+          <input type="text" name="nickname" id="nickname" size="40" /><br/><br/>
+          Host:<br/>
+          <input type="text" name="host" id="host"  size="40"/><br/><br/> 
+          Port:<br/>
+          <input type="text" name="port" id="port"  size="40"/><br/><br/> 
+          Username:<br/>
+          <input type="text" name="username" id="username"  size="40" /><br/><br/>
+          Password:<br/>
+          <input type="password" name="password" id="password"  size="40" /><br/><br/>
+        </div>
+        <div>
+          <input type="submit" name="submit" value="Erstellen" />
+        </div>
+      </form>
+      
+  </section>
+  
+  <section class="panel important">
+    <h2>TS3 - Bot starten/stoppen</h2>
+      <form action="#" th:action="@{/ts3startbot}" th:object="${startbot}" method="post">
+        <div>
+          <input type="submit" name="submit" value="Starten" />
+        </div>
+      </form>
+      <form action="#" th:action="@{/ts3stopbot}" th:object="${stopbot}" method="post">
+        <div>
+          <input type="submit" name="submit" value="Stoppen" />
+        </div>
+      </form>
+  </section>
+  
+  <section class="panel important">
+    <h2>TS3 - Support Benachrichtigung</h2>
+      <form action="#" th:action="@{/ts3support}" th:object="${support}" method="post">
+          <div class="twothirds">
+          Nachricht:<br/>
+          <input type="text" name="message" id="message" size="40" /><br/><br/>
+          Servergroup ID's (mit "," trennen):<br/>
+          <input type="text" name="id" id="id" size="40" /><br/><br/>
+        </div>
+        <div>
+          <input type="submit" name="submit" value="Speichern" />
+        </div>
+      </form>
+  </section>
+  
+  <section class="panel important">
+    <h2>TS3 - Channel erstellen</h2>
+      <form action="#" th:action="@{/ts3Channel}" th:object="${channel}" method="post">
+          <div class="twothirds">
+          Channel-Name:<br/>
+          <input type="text" name="name" id="name" size="40" /><br/><br/>
+        </div>
+        <div>
+          <input type="submit" name="submit" value="Erstellen" />
+        </div>
+      </form>
+  </section>
+
+</main>
+  	
+  </body>
+</html>
