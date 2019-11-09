@@ -45,7 +45,7 @@ public class LoginValues {
 	    		
 	    		
 	    }else {
-	    	System.out.println("Login vorhanden. Lösche Config um neuen Bot zu erstellen"); 
+	    	System.out.println("Login vorhanden. Editiere Login für neue Zugangsdaten"); 
 	    }
 	    	
 	 }

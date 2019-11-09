@@ -14,9 +14,10 @@ import de.flox.ts.utils.LoginValues;
 public class TsBotApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
-		SpringApplication.run(TsBotApplication.class, args);
 		LoginValues login = new LoginValues();
 		login.writeFile();
+		SpringApplication.run(TsBotApplication.class, args);
+		
 		try {
 			TeamSpeakInstaller.createStartFile();
 			
