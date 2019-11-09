@@ -11,6 +11,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
+import de.flox.ts.utils.LoginValues;
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -40,10 +42,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     @Override
     public UserDetailsService userDetailsService() {
+    	LoginValues login = new LoginValues();
         UserDetails user =
              User.withDefaultPasswordEncoder()
-                .username("user")
-                .password("password")
+                .username(login.getUsername())
+                .password(login.getPassword())
                 .roles("USER")
                 .build();
 

@@ -7,15 +7,19 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan;
 
 import de.flox.ts.api.TeamSpeakInstaller;
+import de.flox.ts.utils.LoginValues;
 
 @SpringBootApplication
 @ComponentScan
 public class TsBotApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
-		SpringApplication.run(TsBotApplication.class, args);	
+		SpringApplication.run(TsBotApplication.class, args);
+		LoginValues login = new LoginValues();
+		login.writeFile();
 		try {
 			TeamSpeakInstaller.createStartFile();
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
