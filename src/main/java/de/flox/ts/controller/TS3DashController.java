@@ -16,6 +16,7 @@ import de.flox.ts.api.TSAPI;
 import de.flox.ts.utils.BotValues;
 import de.flox.ts.utils.ChannelValues;
 import de.flox.ts.utils.SupportValues;
+import de.flox.ts.utils.WelcomeValues;
 
 @Controller
 public class TS3DashController {
@@ -79,6 +80,16 @@ public class TS3DashController {
 		
     	api.ts3api.createChannel(values.getName(), properties);
     	
+    	return "ts3dash";
+    }
+    @GetMapping("/ts3Welcome")
+    public String getWelcomemessage(Model model) {
+        model.addAttribute("welcome", new WelcomeValues());
+        return "ts3dash";
+    }
+    @PostMapping("/ts3Welcome")
+    public String createWelcomemessage(@ModelAttribute("welcome") WelcomeValues welcome) {
+    	welcome.writeFile();
     	return "ts3dash";
     }
 

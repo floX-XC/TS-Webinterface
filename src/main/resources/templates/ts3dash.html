@@ -7,7 +7,7 @@
     </head>
   <body>
   	<header role="banner">
-  <h1>TeamBot - Panel</h1>
+  <h1>TSBot - Panel</h1>
   <ul class="utilities">
     <br>
     <li class="users"><a href="#">Mein Account</a></li>
@@ -94,6 +94,18 @@
         </div>
         <div>
           <input type="submit" name="submit" value="Erstellen" />
+        </div>
+      </form>
+  </section>
+  <section class="panel important">
+    <h2>TS3 - Wilkommensnachricht</h2>
+      <form action="#" th:action="@{/ts3Welcome}" th:object="${welcome}" method="post">
+          <div class="twothirds">
+          Wilkommensnachricht:<br/>
+          <input type="text" name="message" id="message" size="40" /><br/><br/>
+        </div>
+        <div>
+          <input type="submit" name="submit" value="Speichern" />
         </div>
       </form>
   </section>
